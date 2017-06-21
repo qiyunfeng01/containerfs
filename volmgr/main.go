@@ -432,6 +432,7 @@ func (s *VolMgrServer) GetVolInfo(ctx context.Context, in *vp.GetVolInfoReq) (*v
 		pBlockGroups = append(pBlockGroups, &tmpBlockGroup)
 	}
 	volInfo.BlockGroups = pBlockGroups
+
 	logger.Debug("Get info:%v for the volume(%s)", volInfo, voluuid)
 	ack = vp.GetVolInfoAck{Ret: 0, VolInfo: &volInfo}
 	return &ack, nil
